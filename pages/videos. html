@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Kita - For Sindi 💖</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .video-category {
+            margin-bottom: 50px;
+        }
+        
+        .category-title {
+            color: #ff006e;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            text-align: center;
+            border-bottom: 3px solid #ffafcc;
+            padding-bottom: 10px;
+        }
+        
+        .video-description {
+            text-align: center;
+            color: #a4133c;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+        
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .video-card {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 10px 25px rgba(164, 19, 60, 0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .video-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .love-video {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .video-caption {
+            text-align: center;
+            color: #ff477e;
+            font-weight: bold;
+        }
+        
+        .video-date {
+            text-align: center;
+            color: #a4133c;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+        
+        .back-btn {
+            display: block;
+            width: 200px;
+            margin: 30px auto;
+            padding: 12px 25px;
+            background: linear-gradient(45deg, #ff006e, #ff477e);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .back-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 0, 110, 0.6);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Background Hearts -->
+        <div class="hearts-background"></div>
+        
+        <header class="header">
+            <h1 class="title">🎬 Video Momen Spesial Kita</h1>
+            <p class="subtitle">Kenangan yang bergerak dan abadi</p>
+        </header>
+        
+        <nav class="nav">
+            <a href="../index.html" class="nav-btn">🏠 Home</a>
+            <a href="gallery.html" class="nav-btn">📸 Gallery</a>
+            <button class="nav-btn active">🎬 Video</button>
+            <a href="letters.html" class="nav-btn">💌 Surat</a>
+        </nav>
+
+        <!-- Video Categories -->
+        
+        <!-- Category 1: Momen Kebersamaan -->
+        <div class="video-category">
+            <h2 class="category-title">💕 Momen Kebersamaan</h2>
+            <p class="video-description">Setiap detik bersamamu adalah kenangan terindah</p>
+            
+            <div class="video-grid">
+                <div class="video-card">
+                    <video controls class="love-video">
+                        <source src="../assets/videos/together-moments/together1.mp4" type="video/mp4">
+                        Browser tidak mendukung video.
+                    </video>
+                    <p class="video-caption">Morning Coffee Together ☕</p>
+                    <p class="video-date">15 Januari 2024</p>
+                </div>
+                
+                <div class="video-card">
+                    <video controls class="love-video">
+                        <source src="../assets/videos/together-moments/together2.mp4" type="video/mp4">
+                        Browser tidak mendukung video.
+                    </video>
+                    <p class="video-caption">Study Date di Cafe 📚</p>
+                    <p class="video-date">20 Januari 2024</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category 2: Momen Spesial -->
+        <div class="video-category">
+            <h2 class="category-title">🎉 Momen Spesial</h2>
+            <p class="video-description">Hari-hari istimewa yang kita rayakan bersama</p>
+            
+            <div class="video-grid">
+                <div class="video-card">
+                    <video controls class="love-video">
+                        <source src="../assets/videos/special-occasions/special1.mp4" type="video/mp4">
+                        Browser tidak mendukung video.
+                    </video>
+                    <p class="video-caption">Anniversary Ke-1 🎂</p>
+                    <p class="video-date">14 Februari 2024</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category 3: Pesan Cinta -->
+        <div class="video-category">
+            <h2 class="category-title">💌 Pesan Cinta dari Marwan</h2>
+            <p class="video-description">Kata-kata yang sulit diucapkan, tapi terekam dengan baik</p>
+            
+            <div class="video-grid">
+                <div class="video-card">
+                    <video controls class="love-video">
+                        <source src="../assets/videos/messages/message1.mp4" type="video/mp4">
+                        Browser tidak mendukung video.
+                    </video>
+                    <p class="video-caption">Untuk Sindi di Hari Biasa</p>
+                    <p class="video-date">Pesan Spesial</p>
+                </div>
+            </div>
+        </div>
+
+        <a href="../index.html" class="back-btn">🏠 Kembali ke Home</a>
+    </div>
+
+    <script src="../script.js"></script>
+</body>
+</html>
