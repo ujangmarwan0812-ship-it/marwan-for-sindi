@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surat Cinta - For Sindi 💖</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .letters-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .letter {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(164, 19, 60, 0.2);
+            margin-bottom: 30px;
+            border-left: 5px solid #ff006e;
+        }
+        
+        .letter-title {
+            color: #ff006e;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2em;
+        }
+        
+        .letter-content {
+            line-height: 1.8;
+            color: #a4133c;
+            font-size: 1.1em;
+            text-align: justify;
+        }
+        
+        .letter-signature {
+            text-align: right;
+            margin-top: 40px;
+            font-style: italic;
+            font-weight: bold;
+            color: #ff006e;
+            font-size: 1.2em;
+        }
+        
+        .love-quote {
+            text-align: center;
+            font-style: italic;
+            color: #ff477e;
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(255, 175, 204, 0.2);
+            border-radius: 10px;
+        }
+        
+        .back-btn {
+            display: block;
+            width: 200px;
+            margin: 40px auto;
+            padding: 12px 25px;
+            background: linear-gradient(45deg, #ff006e, #ff477e);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            font-size: 1.1em;
+        }
+        
+        .back-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 0, 110, 0.6);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Background Hearts -->
+        <div class="hearts-background"></div>
+        
+        <header class="header">
+            <h1 class="title">💌 Surat Cinta Untuk Sindi</h1>
+            <p class="subtitle">Kata-kata dari hati Marwan</p>
+        </header>
+        
+        <nav class="nav">
+            <a href="../index.html" class="nav-btn">🏠 Home</a>
+            <a href="gallery.html" class="nav-btn">📸 Gallery</a>
+            <a href="videos.html" class="nav-btn">🎬 Video</a>
+            <button class="nav-btn active">💌 Surat</button>
+        </nav>
+
+        <div class="letters-container">
+            <!-- Surat 1 -->
+            <div class="letter">
+                <h2 class="letter-title">Untuk Sindi Tercinta 💖</h2>
+                
+                <div class="letter-content">
+                    <p>Sayangku Sindi,</p>
+                    
+                    <p>Dari pertama kali kita bertemu, aku tahu ada sesuatu yang spesial tentang dirimu. 
+                    Setiap senyumanmu membuat hariku lebih cerah, setiap tawamu seperti musik terindah 
+                    yang pernah kudengar.</p>
+                    
+                    <div class="love-quote">
+                        "Cinta itu bukan tentang menemukan orang yang sempurna, 
+                        tapi tentang melihat orang yang tidak sempurna dengan cara yang sempurna."
+                    </div>
+                    
+                    <p>Aku bersyukur memiliki kamu dalam hidupku. Kamu adalah alasan di balik senyumanku,
+                    kekuatan di saat aku lemah, dan cahaya dalam hidupku. Setiap hari bersamamu 
+                    adalah anugerah yang tak ternilai.</p>
+                    
+                    <p>Ingatkah kita pada hari itu? Hari pertama kita bertemu, hari pertama kita jalan bersama,
+                    dan semua momen kecil yang membuat kita semakin dekat. Aku menyimpan setiap kenangan 
+                    itu di dalam hatiku.</p>
+                    
+                    <p>Aku berjanji akan selalu membuatmu tersenyum, mendukung semua mimpimu, 
+                    dan mencintaimu lebih dari kata-kata bisa ungkapkan.</p>
+                    
+                    <p class="letter-signature">
+                        Selamanya milikmu,<br>
+                        <strong>Marwan 💖</strong>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Surat 2 -->
+            <div class="letter">
+                <h2 class="letter-title">Alasan Aku Mencintaimu 🌸</h2>
+                
+                <div class="letter-content">
+                    <p>Sindi sayang,</p>
+                    
+                    <p>Hari ini aku ingin menuliskan semua alasan mengapa aku
