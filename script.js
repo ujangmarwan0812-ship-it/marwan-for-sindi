@@ -19,6 +19,7 @@ function showSection(sectionId) {
     // Add confetti effect when switching sections
     createConfetti();
 }
+
 // Music player function
 function toggleMusic() {
     const audio = document.getElementById('ourSong');
@@ -34,14 +35,6 @@ function toggleMusic() {
         button.style.background = 'linear-gradient(45deg, #ff006e, #ff477e)';
     }
 }
-
-// Auto pause ketika ganti halaman
-window.addEventListener('beforeunload', function() {
-    const audio = document.getElementById('ourSong');
-    if (audio) {
-        audio.pause();
-    }
-});
 
 // Confetti effect function
 function createConfetti() {
