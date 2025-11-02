@@ -18,6 +18,7 @@ function showSection(sectionId) {
     
     // Add confetti effect when switching sections
     createConfetti();
+    createLoveEmojis(10); // Tambah emoji extra
 }
 
 // Music player function
@@ -29,6 +30,7 @@ function toggleMusic() {
         audio.play();
         button.textContent = '⏸️ Pause Lagu';
         button.style.background = 'linear-gradient(45deg, #ff477e, #ff006e)';
+        createLoveEmojis(20); // Emoji extra saat musik diputar
     } else {
         audio.pause();
         button.textContent = '🎵 Putar Lagu Kita';
@@ -38,7 +40,7 @@ function toggleMusic() {
 
 // Confetti effect function
 function createConfetti() {
-    const colors = ['#ff006e', '#ff477e', '#ff85a1', '#ffafcc'];
+    const colors = ['#ff006e', '#ff477e', '#ff85a1', '#ffafcc', '#ffd6e0'];
     const container = document.querySelector('.container');
     
     for (let i = 0; i < 50; i++) {
@@ -59,6 +61,61 @@ function createConfetti() {
     }
 }
 
+// Create pink bubbles background
+function createPinkBubbles() {
+    const bubblesContainer = document.querySelector('.pink-bubbles');
+    for (let i = 0; i < 20; i++) {
+        const bubble = document.createElement('div');
+        bubble.className = 'bubble';
+        bubble.style.width = Math.random() * 80 + 20 + 'px';
+        bubble.style.height = bubble.style.width;
+        bubble.style.left = Math.random() * 100 + '%';
+        bubble.style.bottom = Math.random() * 100 + 'px';
+        bubble.style.animationDelay = Math.random() * 8 + 's';
+        bubble.style.opacity = Math.random() * 0.6 + 0.2;
+        bubblesContainer.appendChild(bubble);
+    }
+}
+
+// Sparkle cursor effect
+document.addEventListener('mousemove', function(e) {
+    if (Math.random() > 0.8) {
+        const sparkle = document.createElement('div');
+        sparkle.className = 'sparkle';
+        sparkle.style.left = e.pageX + 'px';
+        sparkle.style.top = e.pageY + 'px';
+        sparkle.style.background = `hsl(${Math.random() * 360}, 100%, 65%)`;
+        document.body.appendChild(sparkle);
+        
+        setTimeout(() => {
+            sparkle.remove();
+        }, 600);
+    }
+});
+
+// Random love emojis
+function createLoveEmojis(count = 5) {
+    const emojis = ['💖', '💕', '💞', '💓', '💗', '💘', '💝', '🌸', '🎀', '✨'];
+    for (let i = 0; i < count; i++) {
+        setTimeout(() => {
+            const emoji = document.createElement('div');
+            emoji.className = 'love-emoji';
+            emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+            emoji.style.left = Math.random() * 100 + 'vw';
+            emoji.style.fontSize = (Math.random() * 15 + 15) + 'px';
+            emoji.style.animationDuration = (Math.random() * 3 + 2) + 's';
+            emoji.style.animationDelay = Math.random() * 2 + 's';
+            document.body.appendChild(emoji);
+            
+            setTimeout(() => {
+                if (emoji.parentNode) {
+                    emoji.remove();
+                }
+            }, 4000);
+        }, i * 200);
+    }
+}
+
 // Image click zoom effect
 document.addEventListener('DOMContentLoaded', function() {
     const images = document.querySelectorAll('.gallery-item, .preview-photo');
@@ -72,35 +129,53 @@ document.addEventListener('DOMContentLoaded', function() {
             overlay.style.left = '0';
             overlay.style.width = '100%';
             overlay.style.height = '100%';
-            overlay.style.background = 'rgba(0, 0, 0, 0.9)';
+            overlay.style.background = 'rgba(0, 0, 0, 0.95)';
             overlay.style.display = 'flex';
             overlay.style.justifyContent = 'center';
             overlay.style.alignItems = 'center';
             overlay.style.zIndex = '1000';
             overlay.style.cursor = 'pointer';
+            overlay.style.animation = 'fadeIn 0.3s ease';
             
             // Create enlarged image
             const enlargedImg = document.createElement('img');
             enlargedImg.src = this.src;
             enlargedImg.style.maxWidth = '90%';
             enlargedImg.style.maxHeight = '90%';
-            enlargedImg.style.borderRadius = '10px';
+            enlargedImg.style.borderRadius = '15px';
             enlargedImg.style.boxShadow = '0 0 50px rgba(255, 0, 110, 0.5)';
+            enlargedImg.style.animation = 'fadeIn 0.5s ease';
             
             overlay.appendChild(enlargedImg);
             document.body.appendChild(overlay);
             
             // Close on click
             overlay.addEventListener('click', function() {
-                document.body.removeChild(overlay);
+                overlay.style.animation = 'fadeIn 0.3s ease reverse';
+                setTimeout(() => {
+                    if (overlay.parentNode) {
+                        document.body.removeChild(overlay);
+                    }
+                }, 300);
             });
         });
     });
 });
 
-// Auto-create confetti on page load
+// Auto-create effects on page load
 window.addEventListener('load', function() {
-    setTimeout(createConfetti, 1000);
+    createPinkBubbles();
+    setTimeout(() => {
+        createConfetti();
+        createLoveEmojis(15);
+    }, 1000);
+    
+    // Auto create emojis periodically
+    setInterval(() => {
+        if (Math.random() > 0.7) {
+            createLoveEmojis(3);
+        }
+    }, 5000);
 });
 
 // Add smooth scroll to elements
@@ -109,4 +184,18 @@ function smoothScrollTo(element) {
         behavior: 'smooth',
         block: 'start'
     });
+}
+
+// Typewriter effect for title (bonus)
+function typeWriter(element, text, speed = 100) {
+    let i = 0;
+    element.innerHTML = '';
+    function type() {
+        if (i < text.length) {
+            element.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(type, speed);
+        }
+    }
+    type();
 }
