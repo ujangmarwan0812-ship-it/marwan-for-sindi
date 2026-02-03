@@ -22,15 +22,37 @@ function showSection(sectionId) {
 }
 
 // Music player function
-function toggleMusic() {
+function toggleMusic(event) { // ✅ Tambah parameter 'event'
     const audio = document.getElementById('ourSong');
     const button = event.target;
     
+    // Debug: cek apakah audio file beneran ada
+    console.log('Audio src:', audio.src);
+    console.log('Audio current src:', audio.currentSrc);
+    
     if (audio.paused) {
-        audio.play();
-        button.textContent = '⏸️ Pause Lagu';
-        button.style.background = 'linear-gradient(45deg, #ff477e, #ff006e)';
-        createLoveEmojis(20); // Emoji extra saat musik diputar
+        audio.play().then(() => {
+            // Success
+            button.textContent = '⏸️ Pause Lagu';
+            button.style.background = 'linear-gradient(45deg, #ff477e, #ff006e)';
+            createLoveEmojis(20);
+            console.log('🎵 Audio playing');
+        }).catch(error => {
+            // Failed - biasanya karena autoplay policy
+            console.error('Audio play failed:', error);
+            button.textContent = '👆 Klik Dimana Saja Dulu';
+            button.style.background = 'linear-gradient(45deg, #ff006e, #ff0000)';
+            
+            // One-time click listener untuk enable audio
+            const enableAudio = () => {
+                audio.play();
+                button.textContent = '⏸️ Pause Lagu';
+                button.style.background = 'linear-gradient(45deg, #ff477e, #ff006e)';
+                document.removeEventListener('click', enableAudio);
+            };
+            
+            document.addEventListener('click', enableAudio);
+        });
     } else {
         audio.pause();
         button.textContent = '🎵 Putar Lagu Kita';
