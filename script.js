@@ -1,5 +1,5 @@
 // Navigation function
-function showSection(sectionId, e) { // ✅ Ganti parameter jadi 'e'
+function showSection(sectionId, e) {
     // Hide all sections
     document.querySelectorAll('.section').forEach(section => {
         section.classList.remove('active');
@@ -14,7 +14,7 @@ function showSection(sectionId, e) { // ✅ Ganti parameter jadi 'e'
     document.getElementById(sectionId).classList.add('active');
     
     // Add active class to clicked button
-    if (e && e.target) { // ✅ Cek dulu eventnya ada ga
+    if (e && e.target) {
         e.target.classList.add('active');
     }
     
@@ -23,8 +23,7 @@ function showSection(sectionId, e) { // ✅ Ganti parameter jadi 'e'
     createLoveEmojis(10);
 }
 
-
-// Confetti effect fu// ========== MUSIC PLAYER FUNCTION (SIMPLE VERSION) ==========
+// ========== MUSIC PLAYER FUNCTION (SIMPLE VERSION) ==========
 function toggleMusic(e) {
     const audio = document.getElementById('ourSong');
     const button = e.target;
@@ -65,7 +64,9 @@ function toggleMusic(e) {
         
         document.addEventListener('click', onceClick);
     }
-}nction
+}
+
+// Confetti effect function
 function createConfetti() {
     const colors = ['#ff006e', '#ff477e', '#ff85a1', '#ffafcc', '#ffd6e0'];
     const container = document.querySelector('.container');
@@ -223,6 +224,15 @@ window.addEventListener('load', function() {
         }
     }, 5000);
 });
+
+// Add smooth scroll to elements
+function smoothScrollTo(element) {
+    element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+    });
+}
+
 // Typewriter effect for title (bonus)
 function typeWriter(element, text, speed = 100) {
     let i = 0;
@@ -235,4 +245,4 @@ function typeWriter(element, text, speed = 100) {
         }
     }
     type();
-}
+                    }
