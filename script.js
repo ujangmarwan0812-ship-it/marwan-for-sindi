@@ -1,4 +1,4 @@
-// Navigation function
+// ========== NAVIGATION FUNCTION (FIXED) ==========
 function showSection(sectionId, e) {
     // Hide all sections
     document.querySelectorAll('.section').forEach(section => {
@@ -18,7 +18,7 @@ function showSection(sectionId, e) {
         e.target.classList.add('active');
     }
     
-    // Add confetti effect when switching sections
+    // Add confetti effect
     createConfetti();
     createLoveEmojis(10);
 }
@@ -66,7 +66,7 @@ function toggleMusic(e) {
     }
 }
 
-// Confetti effect function
+// ========== CONFETTI EFFECT FUNCTION ==========
 function createConfetti() {
     const colors = ['#ff006e', '#ff477e', '#ff85a1', '#ffafcc', '#ffd6e0'];
     const container = document.querySelector('.container');
@@ -89,7 +89,7 @@ function createConfetti() {
     }
 }
 
-// Create pink bubbles background
+// ========== CREATE PINK BUBBLES BACKGROUND ==========
 function createPinkBubbles() {
     const bubblesContainer = document.querySelector('.pink-bubbles');
     for (let i = 0; i < 20; i++) {
@@ -105,7 +105,7 @@ function createPinkBubbles() {
     }
 }
 
-// Sparkle cursor effect
+// ========== SPARKLE CURSOR EFFECT ==========
 document.addEventListener('mousemove', function(e) {
     if (Math.random() > 0.8) {
         const sparkle = document.createElement('div');
@@ -121,7 +121,7 @@ document.addEventListener('mousemove', function(e) {
     }
 });
 
-// Random love emojis
+// ========== RANDOM LOVE EMOJIS ==========
 function createLoveEmojis(count = 5) {
     const emojis = ['💖', '💕', '💞', '💓', '💗', '💘', '💝', '🌸', '🎀', '✨'];
     for (let i = 0; i < count; i++) {
@@ -144,7 +144,7 @@ function createLoveEmojis(count = 5) {
     }
 }
 
-// Image click zoom effect
+// ========== IMAGE CLICK ZOOM EFFECT ==========
 document.addEventListener('DOMContentLoaded', function() {
     const images = document.querySelectorAll('.gallery-item, .preview-photo');
     
@@ -225,7 +225,7 @@ window.addEventListener('load', function() {
     }, 5000);
 });
 
-// Add smooth scroll to elements
+// ========== SMOOTH SCROLL FUNCTION ==========
 function smoothScrollTo(element) {
     element.scrollIntoView({
         behavior: 'smooth',
@@ -233,7 +233,7 @@ function smoothScrollTo(element) {
     });
 }
 
-// Typewriter effect for title (bonus)
+// ========== TYPEWRITER EFFECT ==========
 function typeWriter(element, text, speed = 100) {
     let i = 0;
     element.innerHTML = '';
@@ -245,4 +245,4 @@ function typeWriter(element, text, speed = 100) {
         }
     }
     type();
-                    }
+}
