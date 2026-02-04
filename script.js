@@ -22,46 +22,50 @@ function showSection(sectionId, e) { // ✅ Ganti parameter jadi 'e'
     createConfetti();
     createLoveEmojis(10);
 }
-// Music player function
-function toggleMusic(event) { // ✅ Tambah parameter 'event'
+
+
+// Confetti effect fu// ========== MUSIC PLAYER FUNCTION (SIMPLE VERSION) ==========
+function toggleMusic(e) {
     const audio = document.getElementById('ourSong');
-    const button = event.target;
+    const button = e.target;
     
-    // Debug: cek apakah audio file beneran ada
-    console.log('Audio src:', audio.src);
-    console.log('Audio current src:', audio.currentSrc);
+    console.log('🎵 Tombol diklik!');
+    console.log('Audio state:', {
+        paused: audio.paused,
+        readyState: audio.readyState,
+        duration: audio.duration,
+        error: audio.error
+    });
     
-    if (audio.paused) {
-        audio.play().then(() => {
-            // Success
+    // Simple play/pause tanpa promise kompleks
+    try {
+        if (audio.paused) {
+            audio.play();
             button.textContent = '⏸️ Pause Lagu';
             button.style.background = 'linear-gradient(45deg, #ff477e, #ff006e)';
             createLoveEmojis(20);
-            console.log('🎵 Audio playing');
-        }).catch(error => {
-            // Failed - biasanya karena autoplay policy
-            console.error('Audio play failed:', error);
-            button.textContent = '👆 Klik Dimana Saja Dulu';
-            button.style.background = 'linear-gradient(45deg, #ff006e, #ff0000)';
-            
-            // One-time click listener untuk enable audio
-            const enableAudio = () => {
-                audio.play();
-                button.textContent = '⏸️ Pause Lagu';
-                button.style.background = 'linear-gradient(45deg, #ff477e, #ff006e)';
-                document.removeEventListener('click', enableAudio);
-            };
-            
-            document.addEventListener('click', enableAudio);
-        });
-    } else {
-        audio.pause();
-        button.textContent = '🎵 Putar Lagu Kita';
-        button.style.background = 'linear-gradient(45deg, #ff006e, #ff477e)';
+            console.log('✅ Audio diputar');
+        } else {
+            audio.pause();
+            button.textContent = '🎵 Putar Lagu Kita';
+            button.style.background = 'linear-gradient(45deg, #ff006e, #ff477e)';
+            console.log('⏸️ Audio dipause');
+        }
+    } catch (error) {
+        console.error('❌ Error:', error);
+        button.textContent = '👆 Tap Screen';
+        
+        // Fallback: user harus tap screen dulu
+        const onceClick = () => {
+            audio.play();
+            button.textContent = '⏸️ Pause Lagu';
+            button.style.background = 'linear-gradient(45deg, #ff477e, #ff006e)';
+            document.removeEventListener('click', onceClick);
+        };
+        
+        document.addEventListener('click', onceClick);
     }
-}
-
-// Confetti effect function
+}nction
 function createConfetti() {
     const colors = ['#ff006e', '#ff477e', '#ff85a1', '#ffafcc', '#ffd6e0'];
     const container = document.querySelector('.container');
@@ -185,8 +189,27 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Auto-create effects on page load
+// ========== TAMBAH DEBUG INFO ==========
 window.addEventListener('load', function() {
+    console.log('🔧 Website loaded for Sindi 💖');
+    
+    const audio = document.getElementById('ourSong');
+    
+    // Debug audio events
+    audio.addEventListener('loadeddata', () => {
+        console.log('📊 Audio loaded, duration:', audio.duration, 'seconds');
+    });
+    
+    audio.addEventListener('error', () => {
+        console.error('❌ Audio error! Code:', audio.error?.code);
+        console.log('🔍 Cek: file ada di assets/audio/our-song.mp3 ?');
+    });
+    
+    audio.addEventListener('canplay', () => {
+        console.log('✅ Audio siap diputar');
+    });
+    
+    // Auto effects
     createPinkBubbles();
     setTimeout(() => {
         createConfetti();
@@ -200,15 +223,6 @@ window.addEventListener('load', function() {
         }
     }, 5000);
 });
-
-// Add smooth scroll to elements
-function smoothScrollTo(element) {
-    element.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-    });
-}
-
 // Typewriter effect for title (bonus)
 function typeWriter(element, text, speed = 100) {
     let i = 0;
