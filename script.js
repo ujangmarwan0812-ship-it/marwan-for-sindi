@@ -1,5 +1,5 @@
 // Navigation function
-function showSection(sectionId) {
+function showSection(sectionId, e) { // ✅ Ganti parameter jadi 'e'
     // Hide all sections
     document.querySelectorAll('.section').forEach(section => {
         section.classList.remove('active');
@@ -14,13 +14,14 @@ function showSection(sectionId) {
     document.getElementById(sectionId).classList.add('active');
     
     // Add active class to clicked button
-    event.target.classList.add('active');
+    if (e && e.target) { // ✅ Cek dulu eventnya ada ga
+        e.target.classList.add('active');
+    }
     
     // Add confetti effect when switching sections
     createConfetti();
-    createLoveEmojis(10); // Tambah emoji extra
+    createLoveEmojis(10);
 }
-
 // Music player function
 function toggleMusic(event) { // ✅ Tambah parameter 'event'
     const audio = document.getElementById('ourSong');
