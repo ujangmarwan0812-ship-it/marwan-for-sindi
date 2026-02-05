@@ -25,27 +25,27 @@
             <button class="nav-btn" onclick="showSection('letters', event)">Surat Cinta</button>
         </nav>
 
-        <!-- Tambahin di Home Section, setelah .love-message -->
-<section id="home" class="section active">
-    <div class="love-message">
-        <h2>Halo Sayangku Sindi! 💕</h2>
-        <p>Setiap hari bersamamu adalah halaman baru dalam cerita indah kita...</p>
-        
-        <!-- TAMBAHIN INI -->
-        <div class="date-counter">
-            <h3>📅 Sudah <span id="daysTogether">0</span> hari bersama!</h3>
-            <p class="anniversary">Sejak 24 Maret 2025 💘</p>
-        </div>
-        
-        <div class="photo-grid">
-            <img src="assets/images/photos/photo1.jpg" alt="Foto kita" class="preview-photo">
-            <img src="assets/images/photos/photo2.jpg" alt="Foto kita" class="preview-photo">
-            <img src="assets/images/photos/photo3.jpg" alt="Foto kita" class="preview-photo">
-            <img src="assets/images/photos/photo4.jpg" alt="Foto kita" class="preview-photo">
-        </div>
-        <button class="play-music" onclick="toggleMusic(event)">🎵 Putar Lagu Kita</button>
-    </div>
-</section>
+        <!-- Home Section (VERSI BARU DENGAN DATE COUNTER) -->
+        <section id="home" class="section active">
+            <div class="love-message">
+                <h2>Halo Sayangku Sindi! 💕</h2>
+                <p>Setiap hari bersamamu adalah halaman baru dalam cerita indah kita...</p>
+                
+                <!-- DATE COUNTER -->
+                <div class="date-counter">
+                    <h3>📅 Sudah <span id="daysTogether">0</span> hari bersama!</h3>
+                    <p class="anniversary">Sejak 24 Maret 2025 💘</p>
+                </div>
+                
+                <div class="photo-grid">
+                    <img src="assets/images/photos/photo1.jpg" alt="Foto kita" class="preview-photo">
+                    <img src="assets/images/photos/photo2.jpg" alt="Foto kita" class="preview-photo">
+                    <img src="assets/images/photos/photo3.jpg" alt="Foto kita" class="preview-photo">
+                    <img src="assets/images/photos/photo4.jpg" alt="Foto kita" class="preview-photo">
+                </div>
+                <button class="play-music" onclick="toggleMusic(event)">🎵 Putar Lagu Kita</button>
+            </div>
+        </section>
 
         <!-- Gallery Section -->
         <section id="gallery" class="section">
@@ -85,7 +85,7 @@
                 <h3>Sayangku Sindi...</h3>
                 <p>
                     Dari pertama kali kita bertemu, aku tahu ada sesuatu yang spesial tentang dirimu. 
-                    Setiap senyumanmu membuat hariku lebih cerah, setiap tawamu seperti musik terindah...
+                    Setiap senyumanmu membuat hariku lebih cerhat, setiap tawamu seperti musik terindah...
                 </p>
                 <p>
                     Aku bersyukur memiliki kamu dalam hidupku. Kamu adalah alasan di balik senyumanku,
@@ -103,9 +103,9 @@
 
     <!-- Audio Element -->
     <audio id="ourSong" loop preload="auto">
-    <source src="assets/audio/our-song.mp3" type="audio/mpeg">
+        <source src="assets/audio/our-song.mp3" type="audio/mpeg">
     </audio>
 
     <script src="script.js"></script>
 </body>
-</html>
+                        </html>
