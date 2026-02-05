@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Sindi - From Marwan 💖</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- GANTI INI DI BAGIAN BACKGROUND -->
+        <div class="pink-bubbles"></div>
+    
+        <!-- Header -->
+        <header class="header">
+            <h1 class="title">💖 Untuk Sindi Tercinta 💖</h1>
+            <p class="subtitle">From Marwan with Love</p>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="nav">
+            <button class="nav-btn active" onclick="showSection('home', event)">Home</button>
+            <button class="nav-btn" onclick="showSection('gallery', event)">Gallery Foto</button>
+            <button class="nav-btn" onclick="showSection('videos', event)">Video Kita</button>
+            <button class="nav-btn" onclick="showSection('letters', event)">Surat Cinta</button>
+        </nav>
+
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <div class="love-message">
+                <h2>Halo Sayangku Sindi! 💕</h2>
+                <p>Setiap hari bersamamu adalah halaman baru dalam cerita indah kita...</p>
+                <div class="photo-grid">
+                    <img src="assets/images/photos/photo1.jpg" alt="Foto kita" class="preview-photo">
+                    <img src="assets/images/photos/photo2.jpg" alt="Foto kita" class="preview-photo">
+                    <img src="assets/images/photos/photo3.jpg" alt="Foto kita" class="preview-photo">
+                    <img src="assets/images/photos/photo4.jpg" alt="Foto kita" class="preview-photo">
+                </div>
+                <button class="play-music" onclick="toggleMusic(event)">🎵 Putar Lagu Kita</button>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="section">
+            <h2>📸 Gallery Kenangan Kita</h2>
+            <div class="gallery-grid">
+                <img src="assets/images/photos/photo4.jpg" alt="Foto 1" class="gallery-item">
+                <img src="assets/images/photos/photo5.jpg" alt="Foto 2" class="gallery-item">
+                <img src="assets/images/photos/photo6.jpg" alt="Foto 3" class="gallery-item">
+                <!-- Tambah foto lebih banyak di sini -->
+            </div>
+        </section>
+
+        <!-- Videos Section -->
+        <section id="videos" class="section">
+            <h2>🎬 Video Momen Spesial</h2>
+            <div class="video-grid">
+                <div class="video-item">
+                    <video controls class="love-video">
+                        <source src="assets/videos/video1.mp4" type="video/mp4">
+                    </video>
+                    <p>Momen kebersamaan kita</p>
+                </div>
+                <div class="video-item">
+                    <video controls class="love-video">
+                        <source src="assets/videos/video2.mp4" type="video/mp4">
+                    </video>
+                    <p>Kenangan terindah</p>
+                </div>
+                <!-- Tambah video lebih banyak di sini -->
+            </div>
+        </section>
+
+        <!-- Letters Section -->
+        <section id="letters" class="section">
+            <h2>💌 Surat Untuk Sindi</h2>
+            <div class="letter">
+                <h3>Sayangku Sindi...</h3>
+                <p>
+                    Dari pertama kali kita bertemu, aku tahu ada sesuatu yang spesial tentang dirimu. 
+                    Setiap senyumanmu membuat hariku lebih cerah, setiap tawamu seperti musik terindah...
+                </p>
+                <p>
+                    Aku bersyukur memiliki kamu dalam hidupku. Kamu adalah alasan di balik senyumanku,
+                    kekuatan di saat aku lemah, dan cahaya dalam hidupku...
+                </p>
+                <p class="signature">- Selamanya milikmu,<br>Marwan 💖</p>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Made with 💖 by Marwan for Sindi</p>
+        </footer>
+    </div>
+
+    <!-- Audio Element -->
+    <audio id="ourSong" loop preload="auto">
+    <source src="assets/audio/our-song.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
