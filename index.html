@@ -25,20 +25,27 @@
             <button class="nav-btn" onclick="showSection('letters', event)">Surat Cinta</button>
         </nav>
 
-        <!-- Home Section -->
-        <section id="home" class="section active">
-            <div class="love-message">
-                <h2>Halo Sayangku Sindi! 💕</h2>
-                <p>Setiap hari bersamamu adalah halaman baru dalam cerita indah kita...</p>
-                <div class="photo-grid">
-                    <img src="assets/images/photos/photo1.jpg" alt="Foto kita" class="preview-photo">
-                    <img src="assets/images/photos/photo2.jpg" alt="Foto kita" class="preview-photo">
-                    <img src="assets/images/photos/photo3.jpg" alt="Foto kita" class="preview-photo">
-                    <img src="assets/images/photos/photo4.jpg" alt="Foto kita" class="preview-photo">
-                </div>
-                <button class="play-music" onclick="toggleMusic(event)">🎵 Putar Lagu Kita</button>
-            </div>
-        </section>
+        <!-- Tambahin di Home Section, setelah .love-message -->
+<section id="home" class="section active">
+    <div class="love-message">
+        <h2>Halo Sayangku Sindi! 💕</h2>
+        <p>Setiap hari bersamamu adalah halaman baru dalam cerita indah kita...</p>
+        
+        <!-- TAMBAHIN INI -->
+        <div class="date-counter">
+            <h3>📅 Sudah <span id="daysTogether">0</span> hari bersama!</h3>
+            <p class="anniversary">Sejak 24 Maret 2025 💘</p>
+        </div>
+        
+        <div class="photo-grid">
+            <img src="assets/images/photos/photo1.jpg" alt="Foto kita" class="preview-photo">
+            <img src="assets/images/photos/photo2.jpg" alt="Foto kita" class="preview-photo">
+            <img src="assets/images/photos/photo3.jpg" alt="Foto kita" class="preview-photo">
+            <img src="assets/images/photos/photo4.jpg" alt="Foto kita" class="preview-photo">
+        </div>
+        <button class="play-music" onclick="toggleMusic(event)">🎵 Putar Lagu Kita</button>
+    </div>
+</section>
 
         <!-- Gallery Section -->
         <section id="gallery" class="section">
